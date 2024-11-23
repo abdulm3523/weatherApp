@@ -1,3 +1,4 @@
+import searchIcon from "../../assets/icons/search.svg";
 export default function SearchBar() {
   return (
     <form action="#">
@@ -9,7 +10,7 @@ export default function SearchBar() {
           required
         />
         <button type="submit">
-          <img src="./assets/search.svg" />
+          <img src={searchIcon} />
         </button>
       </div>
     </form>

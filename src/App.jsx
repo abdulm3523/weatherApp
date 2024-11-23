@@ -1,17 +1,16 @@
 import Header from "./components/header/header";
 import WeatherBoard from "./components/weatherBoard/weatherBoard";
 import "./App.css";
-import useWeather from "./hooks/useWeather";
+import { WeatherDataProvider } from "./provider/weatherDataProvider";
 function App() {
-  const { weatherData, loading, err } = useWeather();
-  console.log(weatherData, err, loading);
   return (
     <>
-      <Header />
-      <p>{loading.message}</p>
-      <main>
-        <WeatherBoard />
-      </main>
+      <WeatherDataProvider>
+        <Header />
+        <div className="grid w-screen h-screen justify-items-center align-middle self-center place-content-center">
+          <WeatherBoard />
+        </div>
+      </WeatherDataProvider>
     </>
   );
 }
