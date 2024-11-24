@@ -5,6 +5,14 @@ import Snow from "./assets/icons/snow.svg";
 import Sun from "./assets/icons/sun.svg";
 import Sunny from "./assets/icons/sunny.svg";
 import Wind from "./assets/icons/wind.svg";
+// import bg image
+import RainBg from "./assets/backgrounds/rainy-day.jpg";
+import HazeBg from "./assets/backgrounds/mist.jpeg";
+import CloudBg from "./assets/backgrounds/few-clouds.jpg";
+import SnowBg from "./assets/backgrounds/snow.jpg";
+import SunBg from "./assets/backgrounds/clear-sky.jpg";
+import SunnyBg from "./assets/backgrounds/sunny.jpg";
+import WindBg from "./assets/backgrounds/winter.jpg";
 
 export default function weatherModeIcon(value) {
   switch (value) {
@@ -57,4 +65,28 @@ function getDate(value, type, inMs) {
   return new Intl.DateTimeFormat("en-us", options).format(date);
 }
 
-export { getDate };
+function weatherModeBg(value) {
+  switch (value) {
+    case "Rain":
+      return RainBg;
+    case "Haze":
+      return HazeBg;
+    case "Clouds":
+      return CloudBg;
+    case "Snow":
+      return SnowBg;
+    case "Sun":
+      return SunBg;
+    case "Sunny":
+      return SunnyBg;
+    case "Wind":
+      return WindBg;
+    case "Clear":
+      return SunnyBg;
+
+    default:
+      break;
+  }
+}
+
+export { getDate, weatherModeBg };
